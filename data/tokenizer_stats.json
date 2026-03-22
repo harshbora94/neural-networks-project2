@@ -1,0 +1,9 @@
+{
+  "total_captions": 2500,
+  "max_length_used": 32,
+  "min_tokens": 8,
+  "max_tokens": 32,
+  "avg_tokens": 11.86,
+  "pct_truncated": 0.04,
+  "vocab_size": 50257
+}
