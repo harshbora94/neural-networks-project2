@@ -1,5 +1,4 @@
-# Image-to-Text Generation Using Vision Transformers
-and Language Models
+# Image-to-Text Generation Using Vision Transformers and Language Models
 
 A multi-milestone deep learning project that builds an **automatic image captioning system** by bridging OpenAI's CLIP visual encoder with GPT-2's language generation capabilities. Trained and evaluated on the MS-COCO dataset across three progressive milestones.
 
