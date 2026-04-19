@@ -218,13 +218,19 @@ run_inference("/content/your-image.jpg")
 
 Evaluation is performed on the held-out validation split. The table below summarizes representative scores (exact values logged during M3 training):
 
-| Model | Decoding | BLEU-1 | BLEU-4 | METEOR | ROUGE-L |
-|---|---|---|---|---|---|
-| Prefix Tuning (M2) | Beam Search | — | — | — | — |
-| LoRA (M3) | Beam Search | — | — | — | — |
-| Full FT (M3) | Beam Search | — | — | — | — |
+| Model | Decoding | BLEU-1 | BLEU-4 | METEOR | ROUGE-L | CIDEr |
+|---|---|---|---|---|---|---|
+| Prefix Tuning | Greedy | 35.86 | 5.10 | 35.84 | 28.15 | 1.94 |
+| Prefix Tuning | Beam Search | 37.40 | 6.55 | 39.05 | 29.77 | 3.28 |
+| Prefix Tuning | Nucleus | 32.85 | 3.42 | 33.14 | 25.94 | 1.00 |
+| LoRA | Greedy | 40.62 | 7.00 | 39.38 | 29.09 | 3.38 |
+| **LoRA** | **Beam Search** | **40.90** | **8.76** | **41.64** | **30.37** | **5.40** |
+| LoRA | Nucleus | 36.25 | 4.70 | 35.49 | 26.54 | 1.58 |
+| Full FT | Greedy | 37.39 | 6.28 | 37.71 | 27.49 | 2.87 |
+| Full FT | Beam Search | 38.02 | 7.80 | 39.10 | 28.00 | 4.62 |
+| Full FT | Nucleus | 33.74 | 4.33 | 32.79 | 25.38 | 1.72 |
 
-> Fill in exact metric values from your M3 evaluation cell output.
+> **Best overall: LoRA + Beam Search** — highest scores across all five metrics. Beam Search consistently outperforms Greedy and Nucleus across all models. LoRA strikes the best balance between parameter efficiency and caption quality, outperforming Full Fine-Tuning despite updating fewer weights.
 
 ---
 
